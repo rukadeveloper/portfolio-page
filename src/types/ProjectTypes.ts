@@ -1,5 +1,6 @@
 export type ProjectTypes = {
   projectName: string;
+  link: string;
   projectBuName: string;
   tag: string[];
   dates: string;

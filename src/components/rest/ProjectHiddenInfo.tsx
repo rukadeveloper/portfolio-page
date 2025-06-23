@@ -5,7 +5,7 @@ const ProjectHiddenInfo = ({ projects }: { projects: ProjectTypes }) => {
   return (
     <div className="project__hidden">
       <h2>{projects.projectName}</h2>
-      <button>자세히 보기</button>
+      <a href={projects.link}>자세히 보기</a>
     </div>
   );
 };

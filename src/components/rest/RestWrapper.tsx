@@ -266,11 +266,12 @@ const Rest = styled.div`
               color: #fff;
               width: 200px;
             }
-            > button {
+            > a {
               width: 100%;
               padding: 1rem 0.9rem;
               padding-top: 1.2rem;
               font-size: 1.1rem;
+              text-align: center;
               color: #fff;
               border: 1px solid #fff;
               margin-top: 1.5rem;
@@ -383,7 +384,6 @@ const Rest = styled.div`
                 width: 40px;
                 height: 40px;
               }
-
           }
         }
       }

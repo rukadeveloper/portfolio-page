@@ -28,9 +28,9 @@ const EducationSection = forwardRef<HTMLElement | null, EducationProps>(
       {
         date: "2024.08 ~ 2024.12",
         name: "슈퍼코딩 풀스택 과정",
-        work: "@ 프론트엔드 React, Node.js 과정 수료",
+        work: "@ 프론트엔드 React, Spring Boot 과정 수료",
         realWork: [
-          "Javascript, React, Node.js 매일 학습",
+          "Javascript, React, Spring Boot 학습",
           "4개월 동안 HTML,CSS 기본부터 시작해 Spring Boot까지 프로젝트 준비",
           "팀 프로젝트 3회 진행 (팀 프로젝트는 중간 팀원들의 사정으로 해체)",
           "동료들과 원만한 커뮤니케이션 수행",
@@ -38,7 +38,7 @@ const EducationSection = forwardRef<HTMLElement | null, EducationProps>(
         icons: [
           "/images/tech/html.png",
           "/images/tech/css.png",
-          "/images/tech/figma.svg",
+          "/images/tech/react-icon.png",
           "/images/tech/springboot.png",
         ],
       },
