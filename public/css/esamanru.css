@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Esamanru Light";
+  src: url("./esa/esamanru\ OTF\ Light.otf") format("opentype");
+}
+@font-face {
+  font-family: "Esamanru Medium";
+  src: url("./esa/esamanru\ OTF\ Medium.otf") format("opentype");
+}
+@font-face {
+  font-family: "Esamanru Bold";
+  src: url("./esa/esamanru\ OTF\ Bold.otf") format("opentype");
+}
