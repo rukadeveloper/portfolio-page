@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 const CB = styled.button`
   width: 7rem;
+  display: block;
   padding: 0.6rem 0;
   padding-bottom: 0.7rem;
   border: none;
@@ -12,6 +13,12 @@ const CB = styled.button`
   font-family: "Neuton", sans-serif !important;
   font-size: 1.1rem;
   cursor: pointer;
+
+  @media screen and (max-width: 1100px) {
+    & {
+      display: none;
+    }
+  }
 `;
 
 const ContactButton = () => {

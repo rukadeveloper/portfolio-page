@@ -12,6 +12,12 @@ const Nav = styled.div`
     display: flex;
     align-items: center;
   }
+
+  @media screen and (max-width: 1100px) {
+    &#gnb {
+      display: none;
+    }
+  }
 `;
 
 const NavBar = () => {

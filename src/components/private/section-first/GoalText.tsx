@@ -23,6 +23,15 @@ const Goal = styled.div`
     padding-top: 1.1rem;
     padding-bottom: 2.4rem;
   }
+
+  @media screen and (max-width: 1100px) {
+    span {
+      font-size: 2.2rem;
+    }
+    p {
+      font-size: 1.15rem;
+    }
+  }
 `;
 
 const GoalText = () => {

@@ -5,6 +5,7 @@ import PageInner from "../page-inner/PageInner";
 import LogoLink from "../logo/LogoLink";
 import NavBar from "./NavBar";
 import ContactButton from "./ContactButton";
+import MobileHam from "../mobile-hamburg/MobileHam";
 
 const Header = styled.header`
   height: 100px;
@@ -21,6 +22,7 @@ const TranspHeader = () => {
         <LogoLink />
         <NavBar />
         <ContactButton />
+        <MobileHam />
       </PageInner>
     </Header>
   );
