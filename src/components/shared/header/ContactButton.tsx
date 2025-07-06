@@ -11,6 +11,7 @@ const CB = styled.button`
   background-color: #fff;
   font-family: "Neuton", sans-serif !important;
   font-size: 1.1rem;
+  cursor: pointer;
 `;
 
 const ContactButton = () => {

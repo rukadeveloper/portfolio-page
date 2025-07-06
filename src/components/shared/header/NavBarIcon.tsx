@@ -8,8 +8,8 @@ const NavIcon = styled.div`
     gap: 0.5rem;
     span {
       display: block;
-      width: 8px;
-      height: 8px;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
       &:first-child {
         background-color: #ffe100;

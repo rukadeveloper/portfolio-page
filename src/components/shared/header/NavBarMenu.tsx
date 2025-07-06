@@ -14,7 +14,14 @@ const NavMenu = styled.nav`
         color: #000;
         font-family: "Esamanru Light", sans-serif !important;
         font-size: 1rem;
-        padding: 0 1rem;
+        padding: 0.4rem 1rem;
+        cursor: pointer;
+        transition: all ease-in-out 0.4s;
+        &:hover {
+          background-color: #000;
+          color: #fff;
+          border-radius: 6px;
+        }
       }
     }
   }
