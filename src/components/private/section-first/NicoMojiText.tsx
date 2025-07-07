@@ -66,6 +66,41 @@ const NicoMoji = styled.div`
     }
   }
 
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 2.7rem;
+    }
+    h2,
+    h3 {
+      font-size: 2.1rem;
+    }
+  }
+
+  @media screen and (max-width: 610px) {
+    & {
+      line-height: 1.3;
+      h1 {
+        font-size: 2.1rem;
+      }
+      h2,
+      h3 {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 460px) {
+    & {
+      h1 {
+        font-size: 1.7rem;
+      }
+      h2,
+      h3 {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
   @keyframes h1Ani {
     from {
       opacity: 0;

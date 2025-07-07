@@ -32,6 +32,37 @@ const Goal = styled.div`
       font-size: 1.15rem;
     }
   }
+
+  @media screen and (max-width: 900px) {
+    span {
+      font-size: 1.9rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    span {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 0.9rem;
+    }
+    img {
+      width: 120px;
+    }
+  }
+
+  @media screen and (max-width: 610px) {
+    span {
+      margin-bottom: 0;
+      line-height: 1.5;
+      br {
+        display: block;
+      }
+    }
+  }
 `;
 
 const GoalText = () => {

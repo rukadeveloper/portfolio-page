@@ -8,6 +8,14 @@ const Logo = styled.h1`
       width: 100px;
     }
   }
+
+  @media screen and (max-width: 610px) {
+    &.logo {
+      img {
+        width: 75px;
+      }
+    }
+  }
 `;
 
 const LogoLink = () => {

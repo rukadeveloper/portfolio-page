@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 
 import styled from "styled-components";
 
@@ -29,11 +29,23 @@ const HamButton = styled.button`
       gap: 0.5rem;
     }
   }
+
+  @media screen and (max-width: 610px) {
+    & {
+      span {
+        width: 75%;
+      }
+    }
+  }
 `;
 
-const MobileHam = () => {
+const MobileHam = ({
+  setMobileHeader,
+}: {
+  setMobileHeader: Dispatch<SetStateAction<boolean>>;
+}) => {
   return (
-    <HamButton>
+    <HamButton onClick={() => setMobileHeader(true)}>
       <span></span>
       <span></span>
       <span></span>
