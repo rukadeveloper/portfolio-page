@@ -88,12 +88,9 @@ const MobileMenu = styled.div`
           }
         }
         &:last-of-type {
-          li {
-            button,
-            a {
-              font-size: 1rem;
-            }
-          }
+          flex-direction: column;
+          align-items: start;
+          gap: 1rem;
         }
       }
     }

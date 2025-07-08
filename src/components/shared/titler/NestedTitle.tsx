@@ -25,6 +25,30 @@ const NestTitle = styled.div`
     font-family: "Esamanru Light", sans-serif !important;
     color: rgba(255, 255, 255, 0.8);
   }
+
+  @media screen and (max-width: 860px) {
+    span {
+      font-size: 2.1rem;
+      top: 4.6rem;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    span {
+      font-size: 1.5rem;
+      top: 5.2rem;
+    }
+  }
+
+  @media screen and (max-width: 430px) {
+    span {
+      font-size: 1.2rem;
+      top: 5.4rem;
+    }
+    p {
+      font-size: 0.95rem;
+    }
+  }
 `;
 
 const NestedTitle = ({

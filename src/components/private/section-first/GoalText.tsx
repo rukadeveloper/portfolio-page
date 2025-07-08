@@ -63,6 +63,15 @@ const Goal = styled.div`
       }
     }
   }
+
+  @media screen and (max-width: 360px) {
+    span {
+      font-size: 1.2rem;
+    }
+    img {
+      width: 100px;
+    }
+  }
 `;
 
 const GoalText = () => {
