@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import { stacksMocks } from "../../../static/mocks/stacksMocks";
 
 import styled from "styled-components";
 import { StackType } from "../../../static/types/stacksTypes";
 
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 
 import { Autoplay, Pagination } from "swiper/modules";
 
@@ -145,6 +145,27 @@ const GridSwiper = styled.div`
 `;
 
 const StacksGrid = () => {
+  // 브라우저 resize 대응
+  const swiperRef = useRef<SwiperClass | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const resizeObserver = new ResizeObserver(() => {
+      if (swiperRef.current) {
+        swiperRef.current.init();
+        console.log("Swiper updated due to resize/display change");
+      }
+    });
+
+    resizeObserver.observe(containerRef.current);
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, []);
+
   return (
     <>
       <StackGrids>
@@ -156,7 +177,7 @@ const StacksGrid = () => {
           </li>
         ))}
       </StackGrids>
-      <GridSwiper id="grid-swiper">
+      <GridSwiper id="grid-swiper" ref={containerRef}>
         <Swiper
           direction="vertical"
           slidesPerView={3}
@@ -172,6 +193,9 @@ const StacksGrid = () => {
             disableOnInteraction: false,
           }}
           modules={[Pagination, Autoplay]}
+          onSwiper={(swiper: SwiperClass) => {
+            swiperRef.current = swiper;
+          }}
         >
           {stacksMocks.map((staks: StackType) => (
             <SwiperSlide>
