@@ -20,6 +20,7 @@ const ProjectsWrapper = styled.ul`
   justify-content: center;
   gap: 2rem;
   li {
+    cursor: pointer;
     width: 240px;
     border-radius: 10px;
     overflow: hidden;
@@ -65,10 +66,18 @@ const ProjectsWrapper = styled.ul`
 const ProjectsImg = styled.div`
   width: 100%;
   height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    &[alt="thumbnail_1"] {
+      width: 50%;
+      height: 50%;
+      object-fit: contain;
+    }
   }
 
   @media screen and (max-width: 900px) {
@@ -99,13 +108,10 @@ const SectionFifth = () => {
           <ProjectsWrapper>
             <li>
               <ProjectsImg>
-                <img
-                  src="/images/projects/thumbnail_01.png"
-                  alt="thumbnail_1"
-                />
+                <img src="/images/logo.png" alt="thumbnail_1" />
               </ProjectsImg>
-              <h3>Baseball Comics</h3>
-              <span>베이스볼 코믹스</span>
+              <h3>My Portfolio Page</h3>
+              <span>자기소개 사이트</span>
             </li>
             <li>
               <ProjectsImg>
