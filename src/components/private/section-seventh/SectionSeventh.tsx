@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import styled from "styled-components";
 import NestedTitle from "../../shared/titler/NestedTitle";
 import PageInner from "../../shared/page-inner/PageInner";
 import { cn } from "../../../libs/utils";
+import useScrollData from "../../../store/useScrollData";
 
 const SectionSeven = styled.section`
   background-color: #000;
@@ -86,8 +87,16 @@ const OpenContent = styled.p`
 const SectionSeventh = () => {
   const [openIdx, setOpenIdx] = useState(0);
 
+  const section6Ref = useRef<HTMLElement | null>(null);
+
+  const { changeSix } = useScrollData();
+
+  useEffect(() => {
+    changeSix(section6Ref.current!.getBoundingClientRect().top, section6Ref);
+  }, [changeSix]);
+
   return (
-    <SectionSeven>
+    <SectionSeven ref={section6Ref}>
       <NestedTitle
         bigTitle="사전 인터뷰 질문"
         english="PreInterview"

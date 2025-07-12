@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import styled from "styled-components";
 import NestedTitle from "../../shared/titler/NestedTitle";
 import PageInner from "../../shared/page-inner/PageInner";
+import useScrollData from "../../../store/useScrollData";
 
 const SectionSix = styled.section`
   background-color: #000;
@@ -78,8 +79,16 @@ const BlogInfo = styled.div`
 `;
 
 const SectionSixth = () => {
+  const section5Ref = useRef<HTMLElement | null>(null);
+
+  const { changeFive } = useScrollData();
+
+  useEffect(() => {
+    changeFive(section5Ref.current!.getBoundingClientRect().top, section5Ref);
+  }, [changeFive]);
+
   return (
-    <SectionSix>
+    <SectionSix ref={section5Ref}>
       <NestedTitle
         bigTitle="테크 블로그"
         english="Tech Blog"

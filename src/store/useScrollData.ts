@@ -11,6 +11,9 @@ interface ScrollDataProps {
   fourTop: number;
   fourRef: React.RefObject<HTMLElement | null>;
   fiveTop: number;
+  fiveRef: React.RefObject<HTMLElement | null>;
+  sixTop: number;
+  sixRef: React.RefObject<HTMLElement | null>;
   changeFirst: (
     first: number,
     firstRef: React.RefObject<HTMLElement | null>
@@ -27,7 +30,11 @@ interface ScrollDataProps {
     four: number,
     fourRef: React.RefObject<HTMLElement | null>
   ) => void;
-  changeFive: (five: number) => void;
+  changeFive: (
+    five: number,
+    fiveRef: React.RefObject<HTMLElement | null>
+  ) => void;
+  changeSix: (six: number, sixRef: React.RefObject<HTMLElement | null>) => void;
 }
 
 const useScrollData = create<ScrollDataProps>((set) => ({
@@ -40,6 +47,9 @@ const useScrollData = create<ScrollDataProps>((set) => ({
   fourTop: 0,
   fourRef: React.createRef<HTMLElement>(),
   fiveTop: 0,
+  fiveRef: React.createRef<HTMLElement>(),
+  sixTop: 0,
+  sixRef: React.createRef<HTMLElement>(),
   changeFirst: (first: number, firstRef: React.RefObject<HTMLElement | null>) =>
     set(() => ({
       firstTop: first,
@@ -62,7 +72,16 @@ const useScrollData = create<ScrollDataProps>((set) => ({
       fourTop: four,
       fourRef,
     })),
-  changeFive: (five: number) => ({ secondTop: five }),
+  changeFive: (five: number, fiveRef: React.RefObject<HTMLElement | null>) =>
+    set(() => ({
+      fiveTop: five,
+      fiveRef,
+    })),
+  changeSix: (six: number, sixRef: React.RefObject<HTMLElement | null>) =>
+    set(() => ({
+      sixTop: six,
+      sixRef,
+    })),
 }));
 
 export default useScrollData;

@@ -44,12 +44,18 @@ const NavBarMenu = () => {
     thirdTop,
     fourRef,
     fourTop,
+    fiveRef,
+    fiveTop,
+    sixRef,
+    sixTop,
   } = useScrollData();
 
   const button1Ref = useRef<HTMLButtonElement | null>(null);
   const button2Ref = useRef<HTMLButtonElement | null>(null);
   const button3Ref = useRef<HTMLButtonElement | null>(null);
   const button4Ref = useRef<HTMLButtonElement | null>(null);
+  const button5Ref = useRef<HTMLButtonElement | null>(null);
+  const button6Ref = useRef<HTMLButtonElement | null>(null);
 
   const firstButton = () => {
     firstRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -65,6 +71,14 @@ const NavBarMenu = () => {
 
   const fourButton = () => {
     fourRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const fiveButton = () => {
+    fiveRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const sixButton = () => {
+    sixRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -91,10 +105,28 @@ const NavBarMenu = () => {
         button3Ref.current!.classList.remove("active");
       }
 
-      if (window.scrollY >= Math.floor(fourTop)) {
+      if (
+        window.scrollY >= Math.floor(fourTop) &&
+        window.scrollY < Math.floor(fiveTop)
+      ) {
         button4Ref.current!.classList.add("active");
       } else {
         button4Ref.current!.classList.remove("active");
+      }
+
+      if (
+        window.scrollY >= Math.floor(fiveTop) &&
+        window.scrollY < Math.floor(sixTop)
+      ) {
+        button5Ref.current!.classList.add("active");
+      } else {
+        button5Ref.current!.classList.remove("active");
+      }
+
+      if (window.scrollY >= Math.floor(sixTop)) {
+        button6Ref.current!.classList.add("active");
+      } else {
+        button6Ref.current!.classList.remove("active");
       }
     };
 
@@ -103,7 +135,7 @@ const NavBarMenu = () => {
     return () => {
       window.removeEventListener("scroll", scrollEvent);
     };
-  }, [firstTop, secondTop, thirdTop, fourTop]);
+  }, [firstTop, secondTop, thirdTop, fourTop, fiveTop, sixTop]);
 
   return (
     <NavMenu>
@@ -129,10 +161,14 @@ const NavBarMenu = () => {
           </button>
         </li>
         <li>
-          <button>블로그</button>
+          <button onClick={fiveButton} ref={button5Ref}>
+            블로그
+          </button>
         </li>
         <li>
-          <button>사전 인터뷰</button>
+          <button onClick={sixButton} ref={button6Ref}>
+            사전 인터뷰
+          </button>
         </li>
       </ul>
     </NavMenu>
