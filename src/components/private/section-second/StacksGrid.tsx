@@ -170,7 +170,7 @@ const StacksGrid = () => {
     <>
       <StackGrids>
         {stacksMocks.map((stacks: StackType, index: number) => (
-          <li>
+          <li key={index}>
             <h2>{stacks.type}</h2>
             <span>{stacks.detail}</span>
             <img src={stacks.imageUrl} alt={stacks.detail} />
@@ -198,7 +198,7 @@ const StacksGrid = () => {
           }}
         >
           {stacksMocks.map((staks: StackType) => (
-            <SwiperSlide>
+            <SwiperSlide key={staks.detail}>
               <h2>{staks.type}</h2>
               <span>{staks.detail}</span>
               <img src={staks.imageUrl} alt={staks.detail} />

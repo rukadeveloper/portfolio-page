@@ -5,6 +5,7 @@ import TranspHeader from "./components/shared/header/TranspHeader";
 import SectionFirst from "./components/private/section-first/SectionFirst";
 import SectionSecond from "./components/private/section-second/SectionSecond";
 import SectionThird from "./components/private/section-third/SectionThird";
+import SectionFourth from "./components/private/section-fourth/SectionFourth";
 
 function App() {
   // 마운트 될때만 애니메이션 처리하기
@@ -26,6 +27,7 @@ function App() {
           <SectionFirst firstMount={firstMount} />
           <SectionSecond />
           <SectionThird />
+          <SectionFourth />
         </main>
       </div>
     </>

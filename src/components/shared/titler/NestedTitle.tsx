@@ -6,6 +6,7 @@ const NestTitle = styled.div`
   color: #fff;
   text-align: center;
   padding-top: 4.5rem;
+  padding-bottom: 3.5rem;
   position: relative;
   h2 {
     font-size: 1.4rem;
@@ -26,27 +27,47 @@ const NestTitle = styled.div`
     color: rgba(255, 255, 255, 0.8);
   }
 
-  @media screen and (max-width: 860px) {
+  @media screen and (max-width: 1150px) {
     span {
       font-size: 2.1rem;
       top: 4.6rem;
     }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 825px) {
     span {
       font-size: 1.5rem;
       top: 5.2rem;
     }
   }
 
-  @media screen and (max-width: 430px) {
+  @media screen and (max-width: 580px) {
     span {
       font-size: 1.2rem;
       top: 5.4rem;
     }
     p {
       font-size: 0.95rem;
+    }
+  }
+
+  @media screen and (max-width: 490px) {
+    span {
+      font-size: 1rem;
+      top: 5.5rem;
+    }
+    p {
+      font-size: 0.85rem;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    span {
+      font-size: 0.9rem;
+      top: 5.6rem;
+    }
+    p {
+      font-size: 0.7rem;
     }
   }
 `;
@@ -64,7 +85,7 @@ const NestedTitle = ({
     <NestTitle>
       <h2>{bigTitle}</h2>
       <span>{english}</span>
-      <p>{details}</p>
+      {details.length > 0 && <p>{details}</p>}
     </NestTitle>
   );
 };
