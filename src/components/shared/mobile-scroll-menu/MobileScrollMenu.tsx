@@ -1,8 +1,10 @@
-import React, { Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useRef } from "react";
 
 import styled from "styled-components";
 
 import { IoCloseOutline } from "react-icons/io5";
+
+import useScrollData from "../../../store/useScrollData";
 
 const MobileMenu = styled.div`
   width: 500px;
@@ -34,7 +36,8 @@ const MobileMenu = styled.div`
         font-weight: 100;
         padding: 0;
         cursor: pointer;
-        &:hover {
+        &:hover,
+        &.active {
           font-weight: 800;
           color: #fff;
         }
@@ -104,27 +107,146 @@ const MobileScrollMenu = ({
   mobileHeader: boolean;
   setMobileHeader: Dispatch<SetStateAction<boolean>>;
 }) => {
+  const button1Ref = useRef<HTMLButtonElement | null>(null);
+  const button2Ref = useRef<HTMLButtonElement | null>(null);
+  const button3Ref = useRef<HTMLButtonElement | null>(null);
+  const button4Ref = useRef<HTMLButtonElement | null>(null);
+  const button5Ref = useRef<HTMLButtonElement | null>(null);
+  const button6Ref = useRef<HTMLButtonElement | null>(null);
+
+  const {
+    firstTop,
+    firstRef,
+    secondTop,
+    secondRef,
+    thirdTop,
+    thirdRef,
+    fourTop,
+    fourRef,
+    fiveTop,
+    fiveRef,
+    sixTop,
+    sixRef,
+  } = useScrollData();
+
+  const firstButton = () => {
+    firstRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const secondButton = () => {
+    secondRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const thirdButton = () => {
+    thirdRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const fourButton = () => {
+    fourRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const fiveButton = () => {
+    fiveRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const sixButton = () => {
+    sixRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    const scrollEvent = () => {
+      if (
+        window.scrollY >= Math.floor(firstTop) &&
+        window.scrollY < Math.floor(secondTop)
+      ) {
+        button1Ref.current!.classList.add("active");
+      } else {
+        button1Ref.current!.classList.remove("active");
+      }
+
+      if (
+        window.scrollY >= Math.floor(secondTop) &&
+        window.scrollY < Math.floor(thirdTop)
+      ) {
+        button2Ref.current!.classList.add("active");
+      } else {
+        button2Ref.current!.classList.remove("active");
+      }
+
+      if (
+        window.scrollY >= Math.floor(thirdTop) &&
+        window.scrollY < Math.floor(fourTop)
+      ) {
+        button3Ref.current!.classList.add("active");
+      } else {
+        button3Ref.current!.classList.remove("active");
+      }
+
+      if (
+        window.scrollY >= Math.floor(fourTop) &&
+        window.scrollY < Math.floor(fiveTop)
+      ) {
+        button4Ref.current!.classList.add("active");
+      } else {
+        button4Ref.current!.classList.remove("active");
+      }
+
+      if (
+        window.scrollY >= Math.floor(fiveTop) &&
+        window.scrollY < Math.floor(sixTop)
+      ) {
+        button5Ref.current!.classList.add("active");
+      } else {
+        button5Ref.current!.classList.remove("active");
+      }
+
+      if (window.scrollY >= Math.floor(sixTop)) {
+        button6Ref.current!.classList.add("active");
+      } else {
+        button6Ref.current!.classList.remove("active");
+      }
+    };
+
+    window.addEventListener("scroll", scrollEvent);
+
+    return () => {
+      window.removeEventListener("scroll", scrollEvent);
+    };
+  }, [firstTop, secondTop, thirdTop, fourTop, fiveTop, sixTop]);
+
   return (
     <MobileMenu className={`${mobileHeader ? "open" : ""}`}>
       <span>SCROLL MENU</span>
       <ul>
         <li>
-          <button>사용 기술</button>
+          <button onClick={firstButton} ref={button1Ref}>
+            사용 기술
+          </button>
         </li>
         <li>
-          <button>경력 사항</button>
+          <button onClick={secondButton} ref={button2Ref}>
+            경력 사항
+          </button>
         </li>
         <li>
-          <button>교육</button>
+          <button onClick={thirdButton} ref={button3Ref}>
+            교육
+          </button>
         </li>
         <li>
-          <button>프로젝트</button>
+          <button onClick={fourButton} ref={button4Ref}>
+            프로젝트
+          </button>
         </li>
         <li>
-          <button>테크 블로그</button>
+          <button onClick={fiveButton} ref={button5Ref}>
+            테크 블로그
+          </button>
         </li>
         <li>
-          <button>사전 인터뷰</button>
+          <button onClick={sixButton} ref={button6Ref}>
+            사전 인터뷰
+          </button>
         </li>
       </ul>
       <ul>
