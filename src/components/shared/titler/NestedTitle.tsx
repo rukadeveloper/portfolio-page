@@ -15,10 +15,11 @@ const NestTitle = styled.div`
     font-family: "Bruno Ace", sans-serif !important;
     font-size: 3rem;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    width: 100%;
+    text-align: center;
     top: 4.3rem;
-    opacity: 0.2;
+    color: rgba(255, 255, 255, 0.2);
   }
   p {
     padding-top: 2rem;
@@ -83,9 +84,9 @@ const NestedTitle = ({
 }) => {
   return (
     <NestTitle>
-      <h2>{bigTitle}</h2>
-      <span>{english}</span>
-      {details.length > 0 && <p>{details}</p>}
+      <h2 data-aos="fade-up">{bigTitle}</h2>
+      <span data-aos="fade-up">{english}</span>
+      {details.length > 0 && <p data-aos="fade-up">{details}</p>}
     </NestTitle>
   );
 };

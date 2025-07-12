@@ -77,16 +77,37 @@ const Goal = styled.div`
 const GoalText = () => {
   return (
     <Goal>
-      <span>
+      <span
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-center"
+        data-aos-duration="1000"
+      >
         크로스 브라우징과
         <br /> 사용자 기반의 경험을 바탕으로
       </span>
-      <span>
+      <span
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-center"
+        data-aos-duration="1000"
+      >
         모두를 만족시키고 성장할 수 있는 <br />
         어플리케이션을 만듭니다.
       </span>
-      <p>디자이너와 개발자적인 측면에서 컨텐츠를 만듭니다.</p>
-      <img src="/images/logo.png" alt="logo_bigger" width={160} />
+      <p
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-center"
+        data-aos-duration="1000"
+      >
+        디자이너와 개발자적인 측면에서 컨텐츠를 만듭니다.
+      </p>
+      <img
+        src="/images/logo.png"
+        alt="logo_bigger"
+        width={160}
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-center"
+        data-aos-duration="1000"
+      />
     </Goal>
   );
 };

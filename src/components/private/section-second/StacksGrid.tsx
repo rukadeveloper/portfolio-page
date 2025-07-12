@@ -170,7 +170,7 @@ const StacksGrid = () => {
     <>
       <StackGrids>
         {stacksMocks.map((stacks: StackType, index: number) => (
-          <li key={index}>
+          <li key={index} data-aos="fade-right">
             <h2>{stacks.type}</h2>
             <span>{stacks.detail}</span>
             <img src={stacks.imageUrl} alt={stacks.detail} />
