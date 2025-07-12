@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import styled from "styled-components";
+
 import NestedTitle from "../../shared/titler/NestedTitle";
 import PageInner from "../../shared/page-inner/PageInner";
+
+import useScrollData from "../../../store/useScrollData";
 
 const SectionFour = styled.section`
   background-color: #000;
@@ -141,9 +144,19 @@ const LanguageCard = styled.ul`
 `;
 
 const SectionFourth = () => {
+  const section2Ref = useRef<HTMLDivElement | null>(null);
+  const section3Ref = useRef<HTMLDivElement | null>(null);
+
+  const { changeSecond, changeThird } = useScrollData();
+
+  useEffect(() => {
+    changeSecond(section2Ref.current!.getBoundingClientRect().top, section2Ref);
+    changeThird(section3Ref.current!.getBoundingClientRect().top, section3Ref);
+  }, [changeSecond, changeThird]);
+
   return (
     <SectionFour>
-      <SectionCareerOrEducation>
+      <SectionCareerOrEducation ref={section2Ref}>
         <NestedTitle bigTitle="경력" english="Career" details="" />
         <CareerAndEducation>
           <PageInner isHeader={false}>
@@ -197,7 +210,7 @@ const SectionFourth = () => {
           </PageInner>
         </CareerAndEducation>
       </SectionCareerOrEducation>
-      <SectionCareerOrEducation>
+      <SectionCareerOrEducation ref={section3Ref}>
         <NestedTitle bigTitle="교육" english="Education" details="" />
         <CareerAndEducation>
           <PageInner isHeader={false}>
@@ -233,7 +246,7 @@ const SectionFourth = () => {
                 <h3>2024.08 ~ 2024.12</h3>
                 <AgingListInfo>
                   <span>슈퍼코딩 프로젝트</span>
-                  <p>금융 페이지 프론트엔드 및 백엔드 작업</p>
+                  <p>React.js, Spring Boot를 활용한 프로젝트형 풀스택 개발</p>
                   <LanguageCard>
                     <li>
                       <img

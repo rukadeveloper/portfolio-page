@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import styled from "styled-components";
 import NestedTitle from "../../shared/titler/NestedTitle";
 import StacksGrid from "./StacksGrid";
+import useScrollData from "../../../store/useScrollData";
 
 const SectionTwo = styled.section`
   width: 100%;
@@ -12,8 +13,16 @@ const SectionTwo = styled.section`
 `;
 
 const SectionSecond = () => {
+  const section1Ref = useRef<HTMLElement | null>(null);
+
+  const { changeFirst } = useScrollData();
+
+  useEffect(() => {
+    changeFirst(section1Ref.current!.getBoundingClientRect().top, section1Ref);
+  }, [changeFirst]);
+
   return (
-    <SectionTwo id="section-second">
+    <SectionTwo id="section-second" ref={section1Ref}>
       <NestedTitle
         bigTitle={"기술 스택 및 도구"}
         english={"Technic Stack"}

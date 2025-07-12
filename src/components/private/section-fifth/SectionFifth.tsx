@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import styled from "styled-components";
+
 import NestedTitle from "../../shared/titler/NestedTitle";
 import PageInner from "../../shared/page-inner/PageInner";
+
+import useScrollData from "../../../store/useScrollData";
 
 const SectionFive = styled.section`
   background-color: #000;
@@ -76,8 +79,16 @@ const ProjectsImg = styled.div`
 `;
 
 const SectionFifth = () => {
+  const section4Ref = useRef<HTMLElement | null>(null);
+
+  const { changeFour } = useScrollData();
+
+  useEffect(() => {
+    changeFour(section4Ref.current!.getBoundingClientRect().top, section4Ref);
+  }, [changeFour]);
+
   return (
-    <SectionFive>
+    <SectionFive ref={section4Ref}>
       <NestedTitle
         bigTitle="참여 프로젝트"
         english="Projects"
