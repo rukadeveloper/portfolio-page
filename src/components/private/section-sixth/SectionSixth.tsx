@@ -8,7 +8,9 @@ const SectionSix = styled.section`
   background-color: #000;
 `;
 
-const Velog = styled.div``;
+const Velog = styled.div`
+  padding-bottom: 2.8rem;
+`;
 
 const VelogWrapper = styled.ul`
   display: flex;
