@@ -236,7 +236,10 @@ const SectionFourth = () => {
                   <p>금융 페이지 프론트엔드 및 백엔드 작업</p>
                   <LanguageCard>
                     <li>
-                      <img src="/images/icons/php.png" alt="php" />
+                      <img
+                        src="/images/icons/react-icon.png"
+                        alt="react-icon"
+                      />
                     </li>
                     <li>
                       <img src="/images/icons/html.png" alt="html" />
@@ -246,9 +249,6 @@ const SectionFourth = () => {
                     </li>
                     <li>
                       <img src="/images/icons/sb.png" alt="spring-boot" />
-                    </li>
-                    <li>
-                      <img src="/images/icons/mysql.jpeg" alt="mysql" />
                     </li>
                   </LanguageCard>
                 </AgingListInfo>
