@@ -7,6 +7,7 @@ import SectionSecond from "./components/private/section-second/SectionSecond";
 import SectionThird from "./components/private/section-third/SectionThird";
 import SectionFourth from "./components/private/section-fourth/SectionFourth";
 import SectionFifth from "./components/private/section-fifth/SectionFifth";
+import SectionSixth from "./components/private/section-sixth/SectionSixth";
 
 function App() {
   // 마운트 될때만 애니메이션 처리하기
@@ -30,6 +31,7 @@ function App() {
           <SectionThird />
           <SectionFourth />
           <SectionFifth />
+          <SectionSixth />
         </main>
       </div>
     </>
