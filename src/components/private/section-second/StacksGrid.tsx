@@ -16,7 +16,7 @@ const StackGrids = styled.ul`
   max-width: 768px;
   height: 500px;
   margin: 0 auto;
-  margin-top: 4rem;
+  margin-top: 2rem;
   display: grid;
   gap: 2.5rem;
   grid-template-columns: 1fr 1fr 1fr;
