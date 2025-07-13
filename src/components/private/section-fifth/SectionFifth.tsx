@@ -26,28 +26,32 @@ const ProjectsWrapper = styled.ul`
     overflow: hidden;
     background-color: #181818;
     font-family: "SUIT", sans-serif !important;
-    h3 {
-      color: #fff;
-      padding: 1rem 1rem 0.8rem 1rem;
-    }
-    span {
-      color: #fff;
-      display: block;
-      padding: 0 1rem;
-      padding-bottom: 2rem;
-      font-size: 0.85rem;
-      font-weight: 200;
+    a {
+      h3 {
+        color: #fff;
+        padding: 1rem 1rem 0.8rem 1rem;
+      }
+      span {
+        color: #fff;
+        display: block;
+        padding: 0 1rem;
+        padding-bottom: 2rem;
+        font-size: 0.85rem;
+        font-weight: 200;
+      }
     }
   }
 
   @media screen and (max-width: 900px) {
     li {
       width: 180px;
-      h3 {
-        font-size: 0.9rem;
-      }
-      span {
-        font-size: 0.75rem;
+      a {
+        h3 {
+          font-size: 0.9rem;
+        }
+        span {
+          font-size: 0.75rem;
+        }
       }
     }
   }
@@ -107,31 +111,37 @@ const SectionFifth = () => {
         <PageInner isHeader={false}>
           <ProjectsWrapper>
             <li>
-              <ProjectsImg>
-                <img src="/images/logo.png" alt="thumbnail_1" />
-              </ProjectsImg>
-              <h3>My Portfolio Page</h3>
-              <span>자기소개 사이트</span>
+              <a href="https://portfolio-page-ten-henna.vercel.app/">
+                <ProjectsImg>
+                  <img src="/images/logo.png" alt="thumbnail_1" />
+                </ProjectsImg>
+                <h3>My Portfolio Page</h3>
+                <span>자기소개 사이트</span>
+              </a>
             </li>
             <li>
-              <ProjectsImg>
-                <img
-                  src="/images/projects/thumbnail_02.png"
-                  alt="thumbnail_2"
-                />
-              </ProjectsImg>
-              <h3>안심 근로자 대출</h3>
-              <span>근로자들을 위한 대출 사이트!</span>
+              <a href="http://partner-finance.co.kr/cple/">
+                <ProjectsImg>
+                  <img
+                    src="/images/projects/thumbnail_02.png"
+                    alt="thumbnail_2"
+                  />
+                </ProjectsImg>
+                <h3>안심 근로자 대출</h3>
+                <span>근로자들을 위한 대출 사이트!</span>
+              </a>
             </li>
             <li>
-              <ProjectsImg>
-                <img
-                  src="/images/projects/thumbnail_03.png"
-                  alt="thumbnail_3"
-                />
-              </ProjectsImg>
-              <h3>자동차 담보 대출</h3>
-              <span>자동차 담보로 대출자들을 위한 사이트!</span>
+              <a href="https://kor-bankpartner.co.kr/auto2369360033202411/">
+                <ProjectsImg>
+                  <img
+                    src="/images/projects/thumbnail_03.png"
+                    alt="thumbnail_3"
+                  />
+                </ProjectsImg>
+                <h3>자동차 담보 대출</h3>
+                <span>자동차 담보로 대출자들을 위한 사이트!</span>
+              </a>
             </li>
           </ProjectsWrapper>
         </PageInner>

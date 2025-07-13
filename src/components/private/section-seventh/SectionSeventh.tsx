@@ -136,53 +136,14 @@ const SectionSeventh = () => {
                 <span>주로 사용하는 프레임워크는 무엇이며 그 이유?</span>
               </button>
               <OpenContent className={cn(openIdx === 1 && "open")}>
-                저의 강점은 새로운 기술에 대한 열린 태도라고 생각합니다. <br />
-                문제 해결력 및 수학에 대한 흥미를 통한 논리적 사고 능력도 <br />
-                그 중 하나입니다. 하지만 디테일한 문제 해결력에 <br />
-                대해서는 많이 부족합니다.
+                저는 React.js를 주로 사용합니다 <br />
+                직접 여러 프로젝트에서 실제로 사용해보면서 컴포넌트 기반의{" "}
                 <br />
-                이를 보완하기 위해 팀원들과 서로 협업하는 시간을 <br />
-                많이 가지기 위해 노력합니다.
-              </OpenContent>
-            </li>
-            <li>
-              <button
-                className={cn(openIdx === 2 && "active")}
-                onClick={() => {
-                  setOpenIdx(2);
-                }}
-              >
-                <span>Q</span>
-                <span>가장 최근에 해결한 기술적인 문제는?</span>
-              </button>
-              <OpenContent className={cn(openIdx === 2 && "open")}>
-                저의 강점은 새로운 기술에 대한 열린 태도라고 생각합니다. <br />
-                문제 해결력 및 수학에 대한 흥미를 통한 논리적 사고 능력도 <br />
-                그 중 하나입니다. 하지만 디테일한 문제 해결력에 <br />
-                대해서는 많이 부족합니다.
+                개발 방식과 효율적인 상태 관리 <br />
+                풍부한 생태계의 장점을 많이 체감했기 때문입니다. <br />
+                사이드 프로젝트에서 REST API와 연동해 데이터 흐름을 관리하고{" "}
                 <br />
-                이를 보완하기 위해 팀원들과 서로 협업하는 시간을 <br />
-                많이 가지기 위해 노력합니다.
-              </OpenContent>
-            </li>
-            <li>
-              <button
-                className={cn(openIdx === 3 && "active")}
-                onClick={() => {
-                  setOpenIdx(3);
-                }}
-              >
-                <span>Q</span>
-                <span>협업한 프로젝트에서 자신의 역할을 말씀해주세요.</span>
-              </button>
-              <OpenContent className={cn(openIdx === 3 && "open")}>
-                저의 강점은 새로운 기술에 대한 열린 태도라고 생각합니다. <br />
-                문제 해결력 및 수학에 대한 흥미를 통한 논리적 사고 능력도 <br />
-                그 중 하나입니다. 하지만 디테일한 문제 해결력에 <br />
-                대해서는 많이 부족합니다.
-                <br />
-                이를 보완하기 위해 팀원들과 서로 협업하는 시간을 <br />
-                많이 가지기 위해 노력합니다.
+                Hook을 통해 성능 최적화 해본 경험도 있습니다
               </OpenContent>
             </li>
           </AccordionMain>

@@ -15,15 +15,17 @@ const LastLink = styled.ul`
   li {
     width: 220px;
     padding: 1rem 0;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    justify-content: center;
-    align-items: center;
     background-color: rgba(47, 60, 69, 0.7);
     border-radius: 1rem;
     font-family: "SUIT", sans-serif !important;
+    a {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
   }
 
   @media screen and (max-width: 720px) {
@@ -65,19 +67,25 @@ const SectionEighth = () => {
       />
       <LastLink>
         <li>
-          <h2>깃허브 홈페이지</h2>
-          <span>Github</span>
-          <img src="/images/icons/github.png" alt="github" width={36} />
+          <a href="https://github.com/rukadeveloper">
+            <h2>깃허브 홈페이지</h2>
+            <span>Github</span>
+            <img src="/images/icons/github.png" alt="github" width={36} />
+          </a>
         </li>
         <li>
-          <h2>벨로그 홈페이지</h2>
-          <span>Velog</span>
-          <img src="/images/icons/velog.png" alt="velog" width={36} />
+          <a href="https://velog.io/@cotasi135/posts">
+            <h2>벨로그 홈페이지</h2>
+            <span>Velog</span>
+            <img src="/images/icons/velog.png" alt="velog" width={36} />
+          </a>
         </li>
         <li>
-          <h2>노션 자기소개서</h2>
-          <span>notion</span>
-          <img src="/images/icons/notion.png" alt="notion" width={36} />
+          <a href="https://ionized-tarn-2a4.notion.site/22d68d9e9f628008a2b5f161a9dcb238">
+            <h2>노션 자기소개서</h2>
+            <span>notion</span>
+            <img src="/images/icons/notion.png" alt="notion" width={36} />
+          </a>
         </li>
       </LastLink>
     </SectionEight>
