@@ -84,7 +84,7 @@ const GridSwiper = styled.div`
     max-width: 300px;
     height: 500px;
     margin: 0 auto;
-    margin-top: 4rem;
+    margin-top: 2rem;
     .swiper {
       height: 100%;
       &:after {
