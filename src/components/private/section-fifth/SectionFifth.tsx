@@ -317,6 +317,15 @@ const SectionFifth = () => {
                   <dt>{t}</dt>
                 ))}
               </dl>
+              <dl className="link">
+                <dd>각 링크들</dd>
+                <dt>
+                  <a href={projectsMocks[isModal.idx].link}>홈페이지 링크</a>
+                </dt>
+                <dt>
+                  <a href={projectsMocks[isModal.idx].figmaLink}>피그마 링크</a>
+                </dt>
+              </dl>
             </ProjectBody>
             <button onClick={closeModal}>
               <IoCloseOutline size={26} color={"#fff"} />
