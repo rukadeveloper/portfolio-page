@@ -80,13 +80,6 @@ const SectionEighth = () => {
             <img src="/images/icons/velog.png" alt="velog" width={36} />
           </a>
         </li>
-        <li>
-          <a href="https://ionized-tarn-2a4.notion.site/22d68d9e9f628008a2b5f161a9dcb238">
-            <h2>노션 자기소개서</h2>
-            <span>notion</span>
-            <img src="/images/icons/notion.png" alt="notion" width={36} />
-          </a>
-        </li>
       </LastLink>
     </SectionEight>
   );

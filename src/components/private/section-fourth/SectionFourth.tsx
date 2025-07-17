@@ -11,7 +11,10 @@ const SectionFour = styled.section`
   background-color: #000;
 `;
 
-const SectionCareerOrEducation = styled.div``;
+const SectionCareerOrEducation = styled.div`
+  max-width: 900px;
+  margin: 0 auto;
+`;
 
 const CareerAndEducation = styled.div`
   h2 {

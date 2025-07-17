@@ -77,11 +77,6 @@ const ProjectsImg = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    &[alt="thumbnail_1"] {
-      width: 50%;
-      height: 50%;
-      object-fit: contain;
-    }
   }
 
   @media screen and (max-width: 900px) {
@@ -111,12 +106,15 @@ const SectionFifth = () => {
         <PageInner isHeader={false}>
           <ProjectsWrapper>
             <li>
-              <a href="https://portfolio-page-ten-henna.vercel.app/">
+              <a href="https://rukadeveloper.github.io">
                 <ProjectsImg>
-                  <img src="/images/logo.png" alt="thumbnail_1" />
+                  <img
+                    src="/images/projects/thumbnail_01.png"
+                    alt="thumbnail_1"
+                  />
                 </ProjectsImg>
-                <h3>My Portfolio Page</h3>
-                <span>자기소개 사이트</span>
+                <h3>Baseball Comics v2</h3>
+                <span>베이스볼 코믹스 v2</span>
               </a>
             </li>
             <li>
