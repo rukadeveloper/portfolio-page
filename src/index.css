@@ -18,9 +18,9 @@ body.dimmed::after {
   right: 0;
   background-color: rgba(0, 0, 0, 0.35);
   z-index: 150;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
-
-@custom-variant dark (&:is(.dark *));
 
 :root {
   --background: oklch(1 0 0);
