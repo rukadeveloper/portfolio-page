@@ -69,7 +69,7 @@ export const projectsMocks = [
     modals: {
       tag: ["팀", "Php", "Spring Boot"],
       startPeriod: "2025.07.01",
-      endPeriod: "2025.07.20",
+      endPeriod: "2025.07.17",
       details:
         "대출 서비스를 소개하는 php 기반 애플리케이션입니다.|완료된 프로젝트이며, 실제 폼 데이터가 상담원에게 넘어갑니다",
       functions: [
