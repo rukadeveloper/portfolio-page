@@ -7,12 +7,12 @@ import SectionSecond from "./components/private/section-second/SectionSecond";
 import SectionThird from "./components/private/section-third/SectionThird";
 import SectionFourth from "./components/private/section-fourth/SectionFourth";
 import SectionFifth from "./components/private/section-fifth/SectionFifth";
-import SectionSixth from "./components/private/section-sixth/SectionSixth";
 import SectionSeventh from "./components/private/section-seventh/SectionSeventh";
 import SectionEighth from "./components/private/section-eighth/SectionEighth";
 import AOS from "aos";
 
 import "aos/dist/aos.css";
+import SectionIntroduce from "./components/private/section-introduce/SectionIntroduce";
 
 function App() {
   // 마운트 될때만 애니메이션 처리하기
@@ -33,11 +33,11 @@ function App() {
         <TranspHeader />
         <main>
           <SectionFirst firstMount={firstMount} />
+          <SectionIntroduce />
           <SectionSecond />
           <SectionThird />
           <SectionFourth />
           <SectionFifth />
-          <SectionSixth />
           <SectionSeventh />
           <SectionEighth />
         </main>

@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Dotum Light";
+  src: url("/dot/KoPubWorld Dotum Light.tff") format("trueType");
+}
+@font-face {
+  font-family: "Dotum Medium";
+  src: url("/dot/KoPubWorld Dotum Medium.tff") format("trueType");
+}
+@font-face {
+  font-family: "Dotum Bold";
+  src: url("/dot/KoPubWorld Dotum Medium.tff") format("trueType");
+}
