@@ -2,7 +2,7 @@ export const projectsMocks = [
   {
     link: "https://rukadeveloper.github.io",
     figmaLink:
-      "https://www.figma.com/design/bER8QhU5kz9nVwIfxlUmer/Portfolio?node-id=38-1277&t=5TNhHyYOl4S36F6U-1",
+      "https://www.figma.com/design/cVfguDIh64sPJQrmioXTxB/Baseball-Comics?node-id=0-1&t=MZQyutGwEHm7PV3n-1",
     imageUrl: "/images/projects/thumbnail_01.png",
     subject: "Baseball Comics v2",
     second_subject: "베이스볼 코믹스 v2",
