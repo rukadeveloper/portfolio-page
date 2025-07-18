@@ -112,6 +112,20 @@ const ProjectModal = styled.div`
     z-index: 500;
     cursor: pointer;
   }
+
+  @media screen and (max-width: 870px) {
+    width: 650px;
+  }
+
+  @media screen and (max-width: 680px) {
+    width: 450px;
+    overflow-y: auto;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 330px;
+    height: 500px;
+  }
 `;
 
 const ProjectHeader = styled.div`
@@ -181,13 +195,14 @@ const ProjectBody = styled.div`
     }
     dt {
       padding-left: 20px;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       padding-top: 10px;
       font-weight: 200;
     }
     &.languages {
       display: flex;
       flex-wrap: wrap;
+      row-gap: 10px;
       dd {
         width: 100%;
         margin-bottom: 16px;
@@ -253,7 +268,7 @@ const SectionFifth = () => {
         <PageInner isHeader={false}>
           <ProjectsWrapper>
             {projectsMocks.map((pm, ix) => (
-              <li>
+              <li key={ix}>
                 <a
                   href={pm.link}
                   onClick={(e) => {
@@ -295,27 +310,29 @@ const SectionFifth = () => {
               </h1>
               <dl className="functions">
                 <dd>주요 기능</dd>
-                {projectsMocks[isModal.idx].modals.functions.map((f) => (
-                  <dt>{f}</dt>
+                {projectsMocks[isModal.idx].modals.functions.map((f, i) => (
+                  <dt key={i}>{f}</dt>
                 ))}
               </dl>
               <dl className="languages">
                 <dd>사용기술 및 언어</dd>
-                {projectsMocks[isModal.idx].modals.usedLanguage.map((l) => (
-                  <dt>{l}</dt>
+                {projectsMocks[isModal.idx].modals.usedLanguage.map((l, i) => (
+                  <dt key={i}>{l}</dt>
                 ))}
               </dl>
               <dl className="contribution">
                 <dd>작업 기여도</dd>
-                {projectsMocks[isModal.idx].modals.contribution.map((d) => (
-                  <dt>{d}</dt>
+                {projectsMocks[isModal.idx].modals.contribution.map((d, i) => (
+                  <dt key={i}>{d}</dt>
                 ))}
               </dl>
               <dl className="trouble-shooting">
                 <dd>트러블 슈팅</dd>
-                {projectsMocks[isModal.idx].modals.troubleShooting.map((t) => (
-                  <dt>{t}</dt>
-                ))}
+                {projectsMocks[isModal.idx].modals.troubleShooting.map(
+                  (t, i) => (
+                    <dt key={i}>{t}</dt>
+                  )
+                )}
               </dl>
               <dl className="link">
                 <dd>각 링크들</dd>
