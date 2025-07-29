@@ -3,6 +3,14 @@ import ReactDOM from "react-dom";
 
 import styled from "styled-components";
 
+// Swiper imports
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import type { Swiper as SwiperType } from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 import NestedTitle from "../../shared/titler/NestedTitle";
 import PageInner from "../../shared/page-inner/PageInner";
 
@@ -19,36 +27,101 @@ const Projects = styled.div`
   padding-bottom: 3rem;
 `;
 
-const ProjectsWrapper = styled.ul`
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  li {
+const ProjectsSliderWrapper = styled.div`
+  .swiper {
+    padding: 20px 0 50px 0;
+    overflow: hidden;
+  }
+
+  .swiper-slide {
     cursor: pointer;
-    width: 240px;
+    width: 300px;
     border-radius: 10px;
     overflow: hidden;
     background-color: #181818;
     font-family: "SUIT", sans-serif !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(78, 169, 255, 0.3);
+    }
+
     a {
+      display: block;
+      text-decoration: none;
+
       h3 {
         color: #fff;
         padding: 1rem 1rem 0.8rem 1rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        transition: color 0.3s ease;
       }
       span {
-        color: #fff;
+        color: #ccc;
         display: block;
         padding: 0 1rem;
         padding-bottom: 2rem;
         font-size: 0.85rem;
         font-weight: 200;
+        line-height: 1.4;
+        transition: color 0.3s ease;
+      }
+
+      &:hover {
+        h3 {
+          color: #4ea9ff;
+        }
+        span {
+          color: #fff;
+        }
       }
     }
   }
 
+  .swiper-pagination {
+    bottom: 10px;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: #4ea9ff;
+    opacity: 0.5;
+    width: 10px;
+    height: 10px;
+    transition: all 0.3s ease;
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #4ea9ff;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    margin-top: -22px;
+    transition: all 0.3s ease;
+
+    &:after {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    &:hover {
+      background: rgba(78, 169, 255, 0.2);
+      transform: scale(1.1);
+    }
+  }
+
   @media screen and (max-width: 900px) {
-    li {
-      width: 180px;
+    .swiper-slide {
+      width: 250px;
+
       a {
         h3 {
           font-size: 0.9rem;
@@ -58,15 +131,37 @@ const ProjectsWrapper = styled.ul`
         }
       }
     }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 38px;
+      height: 38px;
+      margin-top: -19px;
+
+      &:after {
+        font-size: 16px;
+      }
+    }
   }
 
   @media screen and (max-width: 700px) {
-    & {
-      flex-direction: column;
-      align-items: center;
-      li {
-        width: 240px;
-      }
+    .swiper-slide {
+      width: 280px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .swiper {
+      padding: 20px 10px 50px 10px;
+    }
+
+    .swiper-slide {
+      width: 260px;
     }
   }
 `;
@@ -266,24 +361,66 @@ const SectionFifth = () => {
       />
       <Projects>
         <PageInner isHeader={false}>
-          <ProjectsWrapper>
-            {projectsMocks.map((pm, ix) => (
-              <li key={ix}>
-                <a
-                  href={pm.link}
-                  onClick={(e) => {
-                    goModal(e, ix);
-                  }}
-                >
-                  <ProjectsImg>
-                    <img src={pm.imageUrl} alt="thumbnail_1" />
-                  </ProjectsImg>
-                  <h3>{pm.subject}</h3>
-                  <span>{pm.second_subject}</span>
-                </a>
-              </li>
-            ))}
-          </ProjectsWrapper>
+          <ProjectsSliderWrapper>
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              spaceBetween={30}
+              slidesPerView={"auto"}
+              centeredSlides={true}
+              navigation
+              pagination={{
+                clickable: true,
+                dynamicBullets: true,
+              }}
+              autoplay={{
+                delay: 4000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }}
+              loop={true}
+              breakpoints={{
+                320: {
+                  slidesPerView: 1,
+                  spaceBetween: 20,
+                  centeredSlides: true,
+                },
+                640: {
+                  slidesPerView: 1.5,
+                  spaceBetween: 25,
+                  centeredSlides: true,
+                },
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 30,
+                  centeredSlides: false,
+                },
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 30,
+                  centeredSlides: false,
+                },
+              }}
+              onSlideChange={() => console.log("slide change")}
+              onSwiper={(swiper: SwiperType) => console.log(swiper)}
+            >
+              {projectsMocks.map((pm, ix) => (
+                <SwiperSlide key={ix}>
+                  <a
+                    href={pm.link}
+                    onClick={(e) => {
+                      goModal(e, ix);
+                    }}
+                  >
+                    <ProjectsImg>
+                      <img src={pm.imageUrl} alt="thumbnail_1" />
+                    </ProjectsImg>
+                    <h3>{pm.subject}</h3>
+                    <span>{pm.second_subject}</span>
+                  </a>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </ProjectsSliderWrapper>
         </PageInner>
       </Projects>
       {isModal.is &&

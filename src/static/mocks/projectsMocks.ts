@@ -84,4 +84,21 @@ export const projectsMocks = [
       troubleShooting: ["따로 존재하지 않았음"],
     },
   },
+  {
+    link: "http://kurlies.cafe24app.com/",
+    figmaLink: "https://www.kurly.com/main",
+    imageUrl: "/images/projects/thumbnail_04.png",
+    subject: "Market Kurly",
+    second_subject: "마켓 컬리",
+    modals: {
+      tag: ["개인", "React", "Node.js"],
+      startPeriod: "2024.05.01",
+      endPeriod: "2024.07.01",
+      details: "마켓 컬리 서비스를 클론하였습니다.",
+      functions: ["Node.js 이용한 백엔드 처리", "React 이용해 라우팅 처리"],
+      usedLanguage: ["React", "Javascript", "Node.js"],
+      contribution: ["Node.js 이용한 백엔드 처리", "애니메이션 기능 사용하기"],
+      troubleShooting: ["로딩 처리 해결 실패"],
+    },
+  },
 ];
