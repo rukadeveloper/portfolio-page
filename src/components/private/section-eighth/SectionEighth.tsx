@@ -73,13 +73,6 @@ const SectionEighth = () => {
             <img src="/images/icons/github.png" alt="github" width={36} />
           </a>
         </li>
-        <li>
-          <a href="https://velog.io/@cotasi135/posts">
-            <h2>벨로그 홈페이지</h2>
-            <span>Velog</span>
-            <img src="/images/icons/velog.png" alt="velog" width={36} />
-          </a>
-        </li>
       </LastLink>
     </SectionEight>
   );

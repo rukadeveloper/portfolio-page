@@ -251,7 +251,7 @@ const MobileScrollMenu = ({
       </ul>
       <ul>
         <li>
-          <button>CONTACT</button>
+          <button onClick={() => setMobileHeader(false)}>CONTACT</button>
         </li>
         <li>
           <a href="https://github.com/rukadeveloper">GITHUB</a>
