@@ -209,6 +209,27 @@ const SectionFourth = () => {
                   </LanguageCard>
                 </AgingListInfo>
               </AgingList>
+              <AgingList>
+                <h3>2025.11 ~ 2026.04</h3>
+                <AgingListInfo>
+                  <span>SFHSOFT</span>
+                  <p>CLAUDE AI 에이전트를 활용한 Web App Develop</p>
+                  <LanguageCard>
+                    <li>
+                      <img src="/images/icons/rn.png" alt="rn" />
+                    </li>
+                    <li>
+                      <img src="/images/icons/react-icon.png" alt="react-icon" />
+                    </li>
+                    <li>
+                      <img src="/images/icons/next.png" alt="next" />
+                    </li>
+                    <li>
+                      <img src="/images/icons/claude.svg" alt="claude" />
+                    </li>
+                  </LanguageCard>
+                </AgingListInfo>
+              </AgingList>
             </AgingListWrapper>
           </PageInner>
         </CareerAndEducation>
@@ -265,6 +286,27 @@ const SectionFourth = () => {
                     </li>
                     <li>
                       <img src="/images/icons/sb.png" alt="spring-boot" />
+                    </li>
+                  </LanguageCard>
+                </AgingListInfo>
+              </AgingList>
+              <AgingList>
+                <h3>2025.12 ~ 2026.2</h3>
+                <AgingListInfo>
+                  <span>구름 프로펙트 프로젝트 과정</span>
+                  <p>React를 이용한 프론트엔드 개발 프로젝트 - API 연동, 최적화, 테스팅 경험</p>
+                  <LanguageCard>
+                    <li>
+                      <img
+                          src="/images/icons/react-icon.png"
+                          alt="react-icon"
+                      />
+                    </li>
+                    <li>
+                      <img src="/images/icons/html.png" alt="html" />
+                    </li>
+                    <li>
+                      <img src="/images/icons/jest.png" alt="jest" />
                     </li>
                   </LanguageCard>
                 </AgingListInfo>
